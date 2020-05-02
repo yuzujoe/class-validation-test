@@ -1,4 +1,5 @@
 import { IsString, IsNotEmpty, IsNumber } from 'class-validator';
+import { IsKana } from 'src/share/class-validator';
 
 export class PersonDto {
   @IsString()
@@ -7,6 +8,7 @@ export class PersonDto {
 
   @IsString()
   @IsNotEmpty()
+  @IsKana('kana')
   readonly nameKana: string;
 
   @IsNumber()
